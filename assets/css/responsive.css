@@ -1,0 +1,409 @@
+/* =============================================================
+   Tech Eminence — RESPONSIVE.CSS
+   Mobile-first overrides layered on top of style.css desktop base.
+
+   Device map:
+   - Desktop XL ........ 1600px+
+   - Desktop ........... 1280–1599px   (style.css default)
+   - Laptop / small desktop .. 1024–1279px
+   - Tablet (landscape) ....... 900–1023px
+   - Tablet (portrait) ........ 768–899px
+   - Mobile large (phablet) ... 600–767px
+   - Mobile ................... 480–599px
+   - Mobile small .............. 391–479px
+   - Mobile XS ................. 320–390px
+============================================================= */
+
+/* =============================================================
+   GLOBAL FLUID HELPERS — apply at every width
+============================================================= */
+html { -webkit-text-size-adjust: 100%; }
+
+img, svg, video, iframe { max-width: 100%; height: auto; }
+
+/* Prevent any section from forcing horizontal scroll */
+body { overflow-x: hidden; }
+.container { width: 100%; }
+
+/* Tap targets: every interactive element gets a sane minimum on touch */
+@media (hover: none) and (pointer: coarse) {
+  .btn, .nav__link, .mobile-menu__link, .faq__question,
+  .service-card__link, .blog-card__link, .footer__social-link,
+  .process__tab, .back-to-top {
+    min-height: 44px;
+  }
+  .btn { min-height: 46px; }
+}
+
+
+/* =============================================================
+   1600px+ — DESKTOP XL
+============================================================= */
+@media (min-width: 1600px) {
+  .container { max-width: 1340px; }
+  .hero__content { max-width: 920px; }
+}
+
+
+/* =============================================================
+   1280px and down — DESKTOP (standard) → small adjustments
+============================================================= */
+@media (max-width: 1280px) {
+  .container { max-width: 960px; }
+
+  .stats-bar__grid { grid-template-columns: repeat(5, 1fr); row-gap: 1.75rem; }
+  .stats-bar__divider:nth-child(8) { display: none; }
+
+  .nav { gap: 1.25rem; }
+  .nav__links { gap: 1rem; }
+  .nav__link { font-size: 0.76rem; }
+  .nav__ctas .btn--ghost { display: none; } /* keep primary CTA visible, drop secondary at laptop width */
+}
+
+
+/* =============================================================
+   1024px and down — LAPTOP / SMALL DESKTOP
+   Nav collapses to hamburger here; multi-col grids start stepping down
+============================================================= */
+@media (max-width: 1024px) {
+  .container { padding: 0 1.5rem; }
+
+  /* Navigation → hamburger takes over */
+  .nav__links, .nav__ctas { display: none; }
+  .nav__burger { display: flex; }
+
+  /* About */
+  .about__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about__banner { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; }
+  .about__banner-divider { display: none; }
+
+  /* Services */
+  .services__header { grid-template-columns: 1fr; gap: 1.25rem; }
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Process / Why / Depth — 4-col → 2-col */
+  .process__steps { grid-template-columns: repeat(2, 1fr); }
+  .why__grid { grid-template-columns: repeat(2, 1fr); }
+  .depth__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* AI / Industries */
+  .ai-section__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Testimonials / Blog */
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .blog__grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-card--featured { grid-column: 1 / -1; }
+
+  /* Founder */
+  .founder__grid { grid-template-columns: 280px 1fr; gap: 2.5rem; }
+
+  /* FAQ */
+  .faq__grid { grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+
+  /* Footer */
+  .footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .contact-page__grid { grid-template-columns: 1fr; }
+  .contact-form__grid { grid-template-columns: 1fr; }
+
+  /* Stats bar drops to 3 columns, dividers removed (irregular wrap otherwise) */
+  .stats-bar__grid { grid-template-columns: repeat(3, 1fr); row-gap: 1.75rem; }
+  .stats-bar__divider { display: none; }
+
+  /* Hero trust grid stays 4-up but tightens */
+  .hero__trust-grid { gap: 1.25rem; }
+}
+
+
+/* =============================================================
+   900px and down — TABLET LANDSCAPE
+============================================================= */
+@media (max-width: 900px) {
+  .hero { padding-top: 7.5rem; }
+  .hero__content { max-width: 100%; }
+
+  .founder__grid { grid-template-columns: 1fr; gap: 2rem; }
+  .founder__image-wrap { max-width: 280px; margin-inline: auto; }
+  .founder__bio-card { max-width: 280px; margin-inline: auto; }
+
+  .footer__main .container { grid-template-columns: 1fr; gap: 2.25rem; }
+}
+
+
+/* =============================================================
+   768px and down — TABLET PORTRAIT (iPad portrait etc.)
+============================================================= */
+@media (max-width: 768px) {
+  .container { padding: 0 1.25rem; }
+
+  /* Hero */
+  .hero { padding-top: 6.5rem; }
+  .hero__title { font-size: clamp(1.85rem, 6.8vw, 2.5rem); }
+  .hero__title-sub { font-size: clamp(1.15rem, 4.4vw, 1.5rem); }
+  .hero__desc { font-size: 0.95rem; padding: 0 0.5rem; }
+  .hero__trust-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+
+  /* Platforms marquee — stack label above track */
+  .platforms-bar { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding: 0.85rem 0; }
+  .platforms-bar__label { border-right: none; padding: 0 1.25rem 0.25rem; }
+  .platforms-bar__track-wrap { width: 100%; }
+
+  /* Stats bar — 2 columns */
+  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .stats-bar { padding: 2.25rem 0; }
+
+  /* About */
+  .about { padding: 3.5rem 0; }
+  .about__reason { grid-template-columns: 32px 1fr; gap: 0.85rem; }
+  .about__banner { padding: 1.5rem; }
+  .about__banner-item { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .about__banner-num { font-size: 2.1rem; }
+
+  /* Services */
+  .services { padding: 3.5rem 0; }
+  .services__grid { grid-template-columns: 1fr; }
+  .service-card__illustration { padding: 1.25rem; }
+  .service-card__illustration svg { width: 100px; height: 68px; }
+
+  /* Process */
+  .process { padding: 3.5rem 0; }
+  .process__steps { grid-template-columns: 1fr; }
+  .process__header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+
+  /* Why */
+  .why { padding: 3.5rem 0; }
+  .why__grid { grid-template-columns: 1fr; }
+  .why__header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+
+  /* AI / Industries */
+  .ai-section { padding: 3.5rem 0; }
+  .ai-section__list-item { font-size: 0.825rem; padding: 0.85rem 1rem; }
+
+  /* Depth */
+  .depth { padding: 3.5rem 0; }
+  .depth__grid { grid-template-columns: 1fr; }
+  .depth__header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+
+  /* Services "more" strip */
+  .services__more { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+
+  /* Testimonials */
+  .testimonials { padding: 3.5rem 0; }
+  .testimonials__badges { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+
+  /* Founder */
+  .founder { padding: 3.5rem 0; }
+
+  /* Blog */
+  .blog { padding: 3.5rem 0; }
+  .blog__grid { grid-template-columns: 1fr; }
+  .blog-card--featured { grid-column: auto; }
+  .blog__header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+
+  .slider__track { gap: 1rem; }
+  .slider__slide { min-width: min(100%, 320px); }
+  .slider__controls { flex-direction: column; align-items: stretch; }
+  .slider__pagination { justify-content: flex-start; }
+
+  /* FAQ — stack the two lists */
+  .faq { padding: 3.5rem 0; }
+  .faq__grid { grid-template-columns: 1fr; gap: 0; }
+
+  /* Final CTA */
+  .cta-scale { padding: 3.5rem 0; }
+  .cta-scale__actions { flex-direction: column; width: 100%; }
+  .cta-scale__actions .btn { width: 100%; }
+
+  /* Footer */
+  .footer__top { padding: 2.25rem 0; }
+  .footer__top-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .footer__top .btn { width: 100%; justify-content: center; }
+  .footer__main { padding: 2.25rem 0; }
+  .footer__grid { grid-template-columns: 1fr; gap: 1rem; }
+  .footer__bottom-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .footer__legal { gap: 0.85rem 1.25rem; }
+
+  /* Section titles overall */
+  .section-title { font-size: clamp(1.5rem, 5.6vw, 2rem); }
+  .section-label { font-size: 0.7rem; }
+}
+
+
+/* =============================================================
+   600px and down — LARGE PHONE / PHABLET
+============================================================= */
+@media (max-width: 600px) {
+  .hero__actions { flex-direction: column; width: 100%; }
+  .hero__actions .btn { width: 100%; }
+  .hero__trust-grid { grid-template-columns: 1fr 1fr; }
+
+  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+
+  .about__actions { flex-direction: column; }
+  .about__actions .btn { width: 100%; }
+
+  .service-card__tags { gap: 0.35rem; }
+  .testimonial-card footer { flex-wrap: wrap; }
+}
+
+
+/* =============================================================
+   480px and down — MOBILE
+============================================================= */
+@media (max-width: 480px) {
+  .container { padding: 0 1rem; }
+
+  /* Nav */
+  .site-header { padding: 0.8rem 0; }
+  .site-header.is-scrolled { padding: 0.6rem 0; }
+  .nav { min-height: 56px; padding: 0.65rem 0.85rem; border-radius: 999px; }
+  .nav__logo-text { font-size: 0.88rem; }
+  .nav__logo-icon svg { width: 26px; height: 26px; }
+  .nav__burger { display: flex; }
+  .nav__links, .nav__ctas { display: none; }
+
+  /* Hero */
+  .hero { padding-top: 6rem; }
+  .hero__eyebrow { font-size: 0.68rem; text-align: center; }
+  .hero__title { font-size: 1.7rem; line-height: 1.2; }
+  .hero__title-sub { font-size: 1.05rem; }
+  .hero__desc { font-size: 0.875rem; line-height: 1.65; margin: 1.25rem auto 1.75rem; }
+  .hero__trust-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .hero__trust-item strong { font-size: 0.82rem; }
+  .hero__trust-item span { font-size: 0.7rem; }
+  .hero__trust { padding: 1.5rem 0; }
+
+  /* Stats bar — single column, compact */
+  .stats-bar__grid { grid-template-columns: 1fr; gap: 1.1rem; }
+  .stats-bar__item { padding: 0; border-bottom: 1px solid var(--color-border); padding-bottom: 1.1rem; }
+  .stats-bar__item:last-child { border-bottom: none; padding-bottom: 0; }
+  .stats-bar__value { font-size: 1.9rem; }
+
+  /* Cards — tighten internal padding everywhere */
+  .service-card__body,
+  .why-card,
+  .depth-stat,
+  .process__step,
+  .testimonial-card,
+  .blog-card__body {
+    padding: 1.25rem;
+  }
+  .service-card__illustration { padding: 1rem; }
+
+  /* About reasons */
+  .about__reason-title { font-size: 0.9rem; }
+  .about__reason p { font-size: 0.82rem; }
+  .about__banner-num { font-size: 1.85rem; }
+
+  /* Founder */
+  .founder__image-wrap { max-width: 220px; }
+  .founder__bio-card { max-width: 220px; padding: 1rem; }
+  .founder__title { font-size: 1.5rem; }
+  .founder__text p { font-size: 0.85rem; }
+  .founder__quote { font-size: 0.82rem; padding: 1rem 1.15rem; }
+
+  /* Process tabs */
+  .process__tabs { width: 100%; }
+  .process__tab { flex: 1; text-align: center; font-size: 0.72rem; padding: 0.55rem 0.6rem; }
+
+  /* AI list items */
+  .ai-section__list-item { font-size: 0.8rem; padding: 0.8rem 0.9rem; }
+  .ai-section__badge { font-size: 0.7rem; }
+
+  /* Testimonials avatar/name compact */
+  .testimonial-card__avatar { width: 34px; height: 34px; font-size: 0.65rem; }
+
+  /* Blog */
+  .blog-card__title { font-size: 0.98rem; }
+
+  /* FAQ */
+  .faq__question { font-size: 0.85rem; padding: 1.1rem 0; gap: 0.75rem; }
+  .faq__icon { width: 22px; height: 22px; font-size: 0.9rem; }
+
+  /* CTA */
+  .cta-scale__title { font-size: 1.6rem; }
+  .cta-scale__desc { font-size: 0.875rem; }
+
+  /* Footer */
+  .footer__top-big { font-size: 1.3rem; }
+  .footer__newsletter { flex-direction: column; }
+  .footer__newsletter button { width: 100%; }
+  .footer__bottom .container { text-align: left; }
+
+  /* Back to top — smaller, closer to edge */
+  .back-to-top { width: 42px; height: 42px; bottom: 1.25rem; right: 1.25rem; }
+
+  /* Mobile menu panel full-bleed-ish */
+  .mobile-menu__panel { width: min(320px, 88vw); padding: 1.25rem; }
+}
+
+
+/* =============================================================
+   391px and down — SMALL MOBILE
+============================================================= */
+@media (max-width: 391px) {
+  .hero__title { font-size: 1.55rem; }
+  .hero__title-sub { font-size: 0.98rem; }
+  .section-title { font-size: 1.35rem; }
+  .cta-scale__title { font-size: 1.4rem; }
+
+  .stats-bar__value { font-size: 1.7rem; }
+  .depth-stat__value { font-size: 2rem; }
+
+  .btn { padding: 0.75rem 1.3rem; font-size: 0.8rem; }
+  .btn--lg { padding: 0.85rem 1.5rem; font-size: 0.85rem; }
+  .btn--sm { padding: 0.55rem 1rem; font-size: 0.72rem; }
+}
+
+
+/* =============================================================
+   320px and down — SMALLEST SUPPORTED MOBILE
+============================================================= */
+@media (max-width: 320px) {
+  .container { padding: 0 0.85rem; }
+
+  .hero__title { font-size: 1.4rem; }
+  .hero__desc { font-size: 0.82rem; }
+  .section-title { font-size: 1.25rem; }
+  .cta-scale__title { font-size: 1.3rem; }
+
+  .nav__logo-text { font-size: 0.8rem; }
+
+  .btn { padding: 0.7rem 1.1rem; font-size: 0.76rem; }
+
+  .hero__trust-grid { grid-template-columns: 1fr; gap: 0.85rem; text-align: left; }
+  .stats-bar__value { font-size: 1.55rem; }
+
+  .founder__image-wrap, .founder__bio-card { max-width: 100%; }
+}
+
+
+/* =============================================================
+   Desktop-only line-break helper — hides forced <br> on small screens
+============================================================= */
+@media (max-width: 768px) {
+  .hide-mobile { display: none; }
+}
+
+
+/* =============================================================
+   Landscape phones (short viewport height) — prevent hero overflow
+============================================================= */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero { padding-top: 5.5rem; }
+  .hero__trust { padding: 1.25rem 0; }
+  .hero__content { padding-bottom: 2rem; }
+}
+
+
+/* =============================================================
+   PRINT
+============================================================= */
+@media print {
+  .site-header, .mobile-menu, .back-to-top, .scroll-progress,
+  .platforms-bar, .hero__bg-grid, .footer__newsletter { display: none !important; }
+  .section--dark { background: #fff !important; color: #000 !important; }
+  .hero { background: #fff !important; padding-top: 1rem; }
+  .hero__title, .hero__title-sub, .hero__desc { color: #000 !important; }
+  a { text-decoration: underline; }
+}

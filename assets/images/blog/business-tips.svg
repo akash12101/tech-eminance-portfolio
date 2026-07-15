@@ -1,0 +1,38 @@
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Business strategy illustration">
+  <defs>
+    <linearGradient id="bgBt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#232323"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <radialGradient id="glowBt" cx="0.5" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#e8520a" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#e8520a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bulbBt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a3c"/>
+      <stop offset="1" stop-color="#c8430a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bgBt)"/>
+  <rect width="400" height="250" fill="url(#glowBt)"/>
+
+  <!-- lightbulb -->
+  <circle cx="150" cy="112" r="38" fill="url(#bulbBt)" opacity="0.92"/>
+  <rect x="136" y="146" width="28" height="14" rx="3" fill="#f4f1ec" opacity="0.85"/>
+  <rect x="140" y="162" width="20" height="8" rx="2" fill="#f4f1ec" opacity="0.6"/>
+  <path d="M150 92 L150 116 M138 104 L162 104" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- checklist -->
+  <g fill="none" stroke="#f4f1ec" stroke-width="3" stroke-linecap="round">
+    <circle cx="222" cy="88" r="7" opacity="0.9"/>
+    <path d="M219 88 L222 91 L227 84" opacity="0.9"/>
+    <line x1="240" y1="88" x2="300" y2="88" opacity="0.35"/>
+
+    <circle cx="222" cy="120" r="7" opacity="0.9"/>
+    <path d="M219 120 L222 123 L227 116" opacity="0.9"/>
+    <line x1="240" y1="120" x2="288" y2="120" opacity="0.35"/>
+
+    <circle cx="222" cy="152" r="7" stroke="#e8520a" opacity="0.9"/>
+    <line x1="240" y1="152" x2="294" y2="152" opacity="0.35"/>
+  </g>
+</svg>

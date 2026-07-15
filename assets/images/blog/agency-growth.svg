@@ -1,0 +1,40 @@
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agency growth illustration">
+  <defs>
+    <linearGradient id="bgAg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#232323"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <radialGradient id="glowAg" cx="0.8" cy="0.2" r="0.65">
+      <stop offset="0" stop-color="#e8520a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#e8520a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lineAg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c8430a"/>
+      <stop offset="1" stop-color="#ff9a3c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bgAg)"/>
+  <rect width="400" height="250" fill="url(#glowAg)"/>
+
+  <!-- grid -->
+  <g stroke="#f4f1ec" stroke-opacity="0.08">
+    <line x1="110" y1="70" x2="110" y2="190"/>
+    <line x1="180" y1="70" x2="180" y2="190"/>
+    <line x1="250" y1="70" x2="250" y2="190"/>
+    <line x1="320" y1="70" x2="320" y2="190"/>
+    <line x1="110" y1="190" x2="320" y2="190"/>
+    <line x1="110" y1="140" x2="320" y2="140"/>
+    <line x1="110" y1="90" x2="320" y2="90"/>
+  </g>
+
+  <!-- growth line -->
+  <path d="M112 178 L166 156 L214 168 L260 108 L318 78" fill="none" stroke="url(#lineAg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#f4f1ec">
+    <circle cx="112" cy="178" r="5"/>
+    <circle cx="166" cy="156" r="5"/>
+    <circle cx="214" cy="168" r="5"/>
+    <circle cx="260" cy="108" r="5"/>
+    <circle cx="318" cy="78" r="6" fill="#e8520a"/>
+  </g>
+  <path d="M300 78 L318 78 L318 96" stroke="#f4f1ec" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+</svg>

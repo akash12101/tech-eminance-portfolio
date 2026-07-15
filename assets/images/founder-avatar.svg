@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+  <defs>
+    <linearGradient id="founderBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="1" stop-color="#161616"/>
+    </linearGradient>
+    <linearGradient id="founderFig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a3c"/>
+      <stop offset="1" stop-color="#c8430a"/>
+    </linearGradient>
+    <radialGradient id="founderGlow" cx="0.5" cy="0.32" r="0.55">
+      <stop offset="0" stop-color="#e8520a" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#e8520a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#founderBg)"/>
+  <rect width="400" height="500" fill="url(#founderGlow)"/>
+
+  <!-- orbit ring accent, echoes the brand mark -->
+  <circle cx="200" cy="190" r="150" fill="none" stroke="#f4f1ec" stroke-opacity="0.06" stroke-width="1.5"/>
+
+  <!-- abstract bust / avatar silhouette -->
+  <circle cx="200" cy="170" r="72" fill="url(#founderFig)" opacity="0.92"/>
+  <path d="M84 430 C84 320 130 268 200 268 C270 268 316 320 316 430 Z" fill="url(#founderFig)" opacity="0.92"/>
+
+  <!-- subtle collar / neckline detail -->
+  <path d="M170 250 Q200 280 230 250 L230 268 Q200 296 170 268 Z" fill="#161616" opacity="0.35"/>
+
+  <!-- brand dot accent, echoes the logo -->
+  <circle cx="292" cy="96" r="10" fill="#ff9a3c"/>
+</svg>

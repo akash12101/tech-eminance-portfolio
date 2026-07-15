@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/logo/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/favicon-180.png" />
+  <link rel="shortcut icon" href="/assets/logo/favicon.ico" />
+  <meta name="theme-color" content="#E8520A" />
+  <meta name="description" content="Practical guides on web design, WordPress, Shopify, and SEO from Tech Eminence. No filler, no product pitches buried in the content." />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="web design blog, wordpress tips, shopify vs woocommerce, seo guide, website development blog, agency growth" />
+  
+  
+  
+  
+  
+  
+  <title>Blog — Web Design & Development Insights | Tech Eminence</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/animations.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+  <link rel="stylesheet" href="/assets/css/preloader.css" />
+  <link rel="stylesheet" href="/assets/css/vendor/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/assets/css/slider.css" />
+  <link rel="stylesheet" href="/assets/css/whatsapp-widget.css" />
+  <link rel="stylesheet" href="/assets/css/about.css" />
+  <link rel="stylesheet" href="/assets/css/blog.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Tech Eminence Blog",
+    "url": "https://techeminance.com/blog.html",
+    "description": "Practical guides on web design, WordPress, Shopify, SEO, and running a leaner, more profitable web team.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tech Eminence",
+      "url": "https://techeminance.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://techeminance.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://techeminance.com/blog.html"
+    }
+  ]
+}
+  </script>
+
+    <link rel="canonical" href="https://techeminance.com/blog" />
+    <meta property="og:title" content="Blog — Web Design & Development Insights | Tech Eminence" />
+    <meta property="og:description" content="Practical guides on web design, WordPress, Shopify, and SEO from Tech Eminence. No filler, no product pitches buried in the content." />
+    <meta property="og:url" content="https://techeminance.com/blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://techeminance.com/assets/og-image.jpg" />
+    <meta property="og:site_name" content="Tech Eminence" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog — Web Design & Development Insights | Tech Eminence" />
+    <meta name="twitter:description" content="Practical guides on web design, WordPress, Shopify, and SEO from Tech Eminence. No filler, no product pitches buried in the content." />
+    <meta name="twitter:image" content="https://techeminance.com/assets/images/og-image-source.svg" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Tech Eminence" />
+    <meta name="publisher" content="Tech Eminence" />
+    <meta name="application-name" content="Tech Eminence" />
+    <meta name="theme-color" content="#e8520a" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Blog — Web Design & Development Insights | Tech Eminence",
+      "description": "Practical guides on web design, WordPress, Shopify, and SEO from Tech Eminence. No filler, no product pitches buried in the content.",
+      "url": "https://techeminance.com/blog",
+      "publisher": { "@type": "Organization", "name": "Tech Eminence" }
+    }
+    </script>
+</head>
+<body>
+  <!-- ============================================================
+       SITE PRELOADER — shown until the page finishes loading,
+       then fades out (see css/preloader.css + js/preloader.js)
+  ============================================================= -->
+  <div class="preloader" id="sitePreloader" role="status" aria-live="polite" aria-label="Loading Tech Eminence">
+    <div class="preloader__markwrap">
+      <span class="preloader__mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 30 30" fill="none">
+          <path d="M8 9H22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 9V22" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="preloader__ring" aria-hidden="true"></span>
+    </div>
+    <span class="preloader__word">Tech Eminence</span>
+    <span class="preloader__bar"><span class="preloader__bar-fill"></span></span>
+  </div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M9 3.5L3.5 9M9 3.5L14.5 9M9 3.5V14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home" class="nav__logo" aria-label="TECH EMINANCE — Home">
+          <span class="nav__logo-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <rect width="30" height="30" rx="7" fill="#E8520A"></rect>
+              <path d="M8 9H22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M15 9V22" stroke="white" stroke-width="2.5" stroke-linecap="round"></path>
+            </svg>
+          </span>
+          <span class="nav__logo-text">TECH EMINANCE</span>
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="/services/web-design-development" class="nav__link">Services</a></li>
+          <li><a href="/portfolio" class="nav__link">Portfolio</a></li>
+          <li><a href="/about" class="nav__link">About</a></li>
+          <li><a href="/how-we-work" class="nav__link">How We Work</a></li>
+          <li><a href="/blog" class="nav__link is-active">Blog</a></li>
+          <li><a href="/services/web-design-development#pricing" class="nav__link">Pricing</a></li>
+          <li><a href="/contact" class="nav__link">Contact</a></li>
+        </ul>
+
+        <div class="nav__ctas">
+          <a href="/contact" class="nav__cta">Get Free Consultation</a>
+        </div>
+
+        <button class="nav__burger" id="navBurger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu__overlay" id="menuOverlay" tabindex="-1"></div>
+      <nav class="mobile-menu__panel" aria-label="Mobile navigation">
+        <div class="mobile-menu__head">
+          <a href="/" class="mobile-menu__brand">
+            <span class="mobile-menu__brand-icon" aria-hidden="true">
+              <img src="/assets/logo/logo-icon-nav.png" alt="" width="24" height="24" loading="eager" />
+            </span>
+            <span>Tech Eminence</span>
+          </a>
+          <button class="mobile-menu__close" id="menuClose" type="button" aria-label="Close menu">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <path d="M17 5L5 17M5 5L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-menu__links" role="list">
+          <li><a href="/" class="mobile-menu__link"><span class="mobile-menu__icon" aria-hidden="true">⌂</span>Home</a></li>
+          <li><a href="/services/web-design-development" class="mobile-menu__link"><span class="mobile-menu__icon" aria-hidden="true">◈</span>Services</a></li>
+          <li><a href="/portfolio" class="mobile-menu__link"><span class="mobile-menu__icon" aria-hidden="true">▣</span>Portfolio</a></li>
+          <li><a href="/about" class="mobile-menu__link"><span class="mobile-menu__icon" aria-hidden="true">◌</span>About</a></li>
+          <li><a href="/how-we-work" class="mobile-menu__link"><span class="mobile-menu__icon" aria-hidden="true">⚙</span>How We Work</a></li>
+          <li><a href="/blog" class="mobile-menu__link"><span class="mobile-menu__icon" aria-hidden="true">✎</span>Blog</a></li>
+          <li><a href="/services/web-design-development#pricing" class="mobile-menu__link"><span class="mobile-menu__icon" aria-hidden="true">✦</span>Pricing</a></li>
+          <li><a href="/contact" class="mobile-menu__link"><span class="mobile-menu__icon" aria-hidden="true">✉</span>Contact</a></li>
+        </ul>
+
+        <a href="/contact" class="mobile-menu__cta">Get Free Consultation</a>
+
+        <div class="mobile-menu__social" aria-label="Social media links">
+          <a href="#" aria-label="LinkedIn" class="mobile-menu__social-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .514.526 0 1.175 0h13.65C15.474 0 16 .514 16 1.146v13.708c0 .632-.526 1.146-1.175 1.146H1.175C.526 16 0 15.486 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="mobile-menu__social-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="mobile-menu__social-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0H8zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =============================================================
+         SECTION 1 — PAGE HERO
+    ============================================================= -->
+    <section class="page-hero" aria-labelledby="blogHeroHeading">
+      <img src="/assets/images/page-hero-accent.svg" alt="" width="420" height="420" loading="eager" decoding="async" class="page-hero__art" aria-hidden="true" />
+      <div class="container page-hero__inner">
+      <nav class="page-hero__crumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Blog</span>
+        </nav>
+        <h1 class="page-hero__title" id="blogHeroHeading">
+          Guides for <span class="text-accent">businesses and agencies</span> who want to build smarter
+        </h1>
+        <p class="page-hero__desc">
+          Practical articles on web design, WordPress, Shopify, SEO, and running a leaner, more profitable web team. No filler. No product pitches buried in the content.
+        </p>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         SECTION 2 — ARTICLES
+    ============================================================= -->
+    <section class="section--cream" style="padding: var(--space-3xl) 0;" aria-labelledby="allArticlesTitle">
+      <div class="container">
+        <h2 class="section-title" id="allArticlesTitle" style="font-size:1.4rem;">All Articles</h2>
+
+        <div class="blog-filters" id="blogFilters" role="group" aria-label="Filter articles by category">
+          <button class="blog-filter active" data-filter="all">All Articles</button>
+          <button class="blog-filter" data-filter="web-design">Web Design</button>
+          <button class="blog-filter" data-filter="wordpress">WordPress</button>
+          <button class="blog-filter" data-filter="ecommerce">Ecommerce</button>
+          <button class="blog-filter" data-filter="seo">SEO</button>
+          <button class="blog-filter" data-filter="business-tips">Business Tips</button>
+          <button class="blog-filter" data-filter="agency-growth">Agency Growth</button>
+        </div>
+
+        <!-- Featured top row -->
+        <div class="blog-top-grid">
+          <article class="blog-card blog-card--split reveal-up" data-category="seo">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/seo.svg" alt="SEO illustration for: Shopify SEO for Growing Stores: What Actually Moves Rankings" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">SEO</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">SEO</span>
+                <span class="blog-card__read-time">· 12 min read</span>
+              </div>
+              <h3 class="blog-card__title">Shopify SEO for Growing Stores: What Actually Moves Rankings</h3>
+              <p class="blog-card__excerpt">The foundation first: what Shopify already handles out of the box, and what it doesn't. The platform generates a sitemap automatically, adds canonical tags to prevent duplicate content across product variants, and redirects HTTP to HTTPS by default. For a store that isn't ranking, the real gaps are almost never the platform — they're in the product copy, the collection structure, and the app bloat nobody audited. Here's where to actually look first […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/shopify-seo-growing-stores" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" data-category="web-design">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/web-design.svg" alt="Web Design illustration for: How Typography Shapes First Impressions Before Anyone Reads a Word" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">Web Design</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Web Design</span>
+                <span class="blog-card__read-time">· 9 min read</span>
+              </div>
+              <h3 class="blog-card__title">How Typography Shapes First Impressions Before Anyone Reads a Word</h3>
+              <p class="blog-card__excerpt">A visitor forms an opinion about a website before they consciously read a single sentence. Layout and color carry part of that impression — but a significant part comes from the typeface on screen. This is not abstract design theory. Font choice signals trust, price point, and professionalism in the first two seconds […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/how-typography-shapes-first-impressions" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Main grid -->
+        <div class="blog__grid reveal-up" style="margin-top: 1.5rem;">
+
+          <article class="blog-card reveal-up" data-category="business-tips">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/business-tips.svg" alt="Business Tips illustration for: The Website Contract Checklist Every Client Should See Before Work Starts" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">Business Tips</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Business Tips</span>
+                <span class="blog-card__read-time">· 13 min read</span>
+              </div>
+              <h3 class="blog-card__title">The Website Contract Checklist Every Client Should See Before Work Starts</h3>
+              <p class="blog-card__excerpt">Why web development contracts fail: most disputes don't start with bad faith, they start with assumptions. The client assumed revisions were unlimited. The agency assumed the client would provide content by a certain date. Neither assumption was written down, so when the project ran long or the invoice was questioned, both sides were arguing from memory […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/website-contract-checklist" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" data-category="web-design">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/web-design.svg" alt="Web Design illustration for: 12 Elements Every Business Website Needs (And Most Sites Miss)" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">Web Design</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Web Design</span>
+                <span class="blog-card__read-time">· 9 min read</span>
+              </div>
+              <h3 class="blog-card__title">12 Elements Every Business Website Needs (And Most Sites Miss)</h3>
+              <p class="blog-card__excerpt">This matters for every business, not just design-forward brands. Most sites have a rough sense of what a good website looks like — clean design, fast load times, works on mobile. But when you're delivering ten sites a year across different industries, "rough sense" is not a repeatable standard. The gaps show up in the same handful of places every time […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/12-elements-business-website-needs" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" data-category="wordpress">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/wordpress.svg" alt="WordPress illustration for: Why a WordPress Care Plan Costs Less Than One Bad Hack" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">WordPress</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">WordPress</span>
+                <span class="blog-card__read-time">· 8 min read</span>
+              </div>
+              <h3 class="blog-card__title">Why a WordPress Care Plan Costs Less Than One Bad Hack</h3>
+              <p class="blog-card__excerpt">Most maintenance revenue is invisible until something breaks. A site goes down, a plugin conflict takes checkout offline, or a client gets hacked because a theme hasn't been updated in two years. A care plan turns an unpredictable emergency into a predictable line item — and it pays for itself the first time it prevents one bad weekend […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/wordpress-care-plan-cost" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" data-category="agency-growth">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/agency-growth.svg" alt="Agency Growth illustration for: When to Hire an In-House Developer vs When to Outsource" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">Agency Growth</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Agency Growth</span>
+                <span class="blog-card__read-time">· 6 min read</span>
+              </div>
+              <h3 class="blog-card__title">When to Hire an In-House Developer vs When to Outsource</h3>
+              <p class="blog-card__excerpt">Every growing team hits the same wall eventually. A good brief lands, the budget is right, the client is ready to move — and then someone says, "we don't have the dev capacity for this." What happens next shapes the next two or three years of the business. Some teams hire. Some outsource. Here's how to actually decide […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/when-to-hire-in-house-vs-outsource" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" data-category="ecommerce">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/ecommerce.svg" alt="Ecommerce illustration for: Shopify vs WooCommerce in 2025: Which Platform Actually Fits Your Business?" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">Ecommerce</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Ecommerce</span>
+                <span class="blog-card__read-time">· 7 min read</span>
+              </div>
+              <h3 class="blog-card__title">Shopify vs WooCommerce in 2025: Which Platform Actually Fits Your Business?</h3>
+              <p class="blog-card__excerpt">The honest answer is: it depends. But not on budget or simplicity — those are surface-level comparisons that lead businesses into the wrong platform for years. The real decision factors are product catalogue complexity, customization requirements, long-term scaling plans, and whether you have a developer to maintain the platform. Let's break each one down […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/shopify-vs-woocommerce-2025" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" data-category="seo">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/seo.svg" alt="SEO illustration for: AI Search Is Changing SEO — Here's What Actually Matters Now" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">SEO</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">SEO</span>
+                <span class="blog-card__read-time">· 10 min read</span>
+              </div>
+              <h3 class="blog-card__title">AI Search Is Changing SEO — Here's What Actually Matters Now</h3>
+              <p class="blog-card__excerpt">Search behavior shifted faster than most SEO advice has caught up with. A growing share of research now happens inside AI chat tools before a single Google search occurs. That doesn't make traditional SEO obsolete, but it does change what "ranking" means — and what your content needs to look like to get cited at all […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/ai-search-changing-seo" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" data-category="agency-growth">
+            <div class="blog-card__image blog-card__image--dark">
+              <img src="/assets/images/blog/agency-growth.svg" alt="Agency Growth illustration for: How to Add a New Web Service to Your Business Without Hiring" width="400" height="250" loading="lazy" decoding="async" class="blog-card__image-media" /><span class="blog-card__tag-top">Agency Growth</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <span class="blog-card__category">Agency Growth</span>
+                <span class="blog-card__read-time">· 10 min read</span>
+              </div>
+              <h3 class="blog-card__title">How to Add a New Web Service to Your Business Without Hiring</h3>
+              <p class="blog-card__excerpt">Most teams get the order wrong. The usual pattern goes like this: someone spots an opportunity, decides to offer web builds or SEO, then starts looking for someone to hire. They write a job description, interview candidates, make an offer. Months pass before the first client brief actually lands — and the market has moved on by then […]</p>
+              <div class="blog-card__author-row">
+                <div class="blog-card__author">
+                  <span class="blog-card__avatar" aria-hidden="true">TE</span>
+                  <span>Tech Eminence Team</span>
+                </div>
+                <a href="/blog/add-new-web-service-without-hiring" class="blog-card__link">Read Article →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p id="blogEmptyState" style="display:none; text-align:center; color: var(--color-text-muted); padding: 3rem 0;">No articles in this category yet — check back soon.</p>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         SECTION 3 — NEWSLETTER
+    ============================================================= -->
+    <section class="newsletter" aria-labelledby="newsletterTitle">
+      <div class="container">
+        <div class="newsletter__inner">
+          <div>
+            <div class="section-label section-label--light">Stay in the Loop</div>
+            <h2 class="newsletter__title" id="newsletterTitle">New guides, <span class="text-accent">no noise.</span></h2>
+            <p class="newsletter__desc">One email when a new article goes live. No promotions, no weekly digests. Just the guide and a short note on why we wrote it.</p>
+          </div>
+          <div class="newsletter__right">
+            <form class="newsletter__form" onsubmit="return false;">
+              <input type="email" class="newsletter__input" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" class="btn btn--primary">Subscribe</button>
+            </form>
+            <p class="newsletter__note">No spam. Unsubscribe any time. We respect your inbox.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         SECTION 4 — STANDARD CTA
+    ============================================================= -->
+    <section class="standard-cta section--cream" aria-labelledby="blogCtaTitle">
+      <div class="container">
+        <div class="standard-cta__inner reveal-up">
+          <div class="section-label" style="justify-content:center;">Work With Us</div>
+          <h2 class="standard-cta__title" id="blogCtaTitle">
+            Ready to fix what's<br />
+            <span class="text-accent">costing you customers?</span>
+          </h2>
+          <p class="standard-cta__desc">If any of these topics sound like a problem you're dealing with right now, we should talk. We've been solving them for businesses and agency partners since 2011.</p>
+          <div class="standard-cta__actions">
+            <a href="/contact" class="btn btn--primary btn--lg">Start a Project →</a>
+            <a href="/how-we-work" class="btn btn--ghost btn--lg">See How It Works</a>
+          </div>
+          <p class="standard-cta__note">NDA on day one · No long-term commitment required</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================
+         SECTION 5 — FINAL CTA
+    ============================================================= -->
+    <section class="cta-scale section--dark" aria-labelledby="blogFinalCtaTitle">
+      <div class="container">
+        <div class="cta-scale__inner reveal-up">
+          <div class="section-label" style="justify-content:center;">Let's Work Together</div>
+          <h2 class="cta-scale__title" id="blogFinalCtaTitle">
+            The invisible team<br class="hide-mobile" />
+            behind your best work.
+          </h2>
+          <p class="cta-scale__desc">
+            Whether you need a website built directly or a white-label development partner behind your agency, the process is the same — documented, checked, and delivered on time.
+          </p>
+          <div class="cta-scale__actions">
+            <a href="/contact" class="btn btn--primary btn--lg">Start a Project →</a>
+            <a href="/contact" class="btn btn--outline-white btn--lg">Talk to the Team</a>
+          </div>
+          <p class="cta-scale__note">Free consultation · No obligation · Response within 24 hours</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer__top">
+      <div class="container footer__top-inner">
+        <div>
+          <p class="footer__eyebrow">Let's build something exceptional</p>
+          <h2 class="footer__headline">Launch a website that feels polished, performs fast, and earns trust from the first visit.</h2>
+        </div>
+        <a href="/contact" class="btn btn--primary">Get Free Consultation</a>
+      </div>
+    </div>
+
+    <div class="footer__main">
+      <div class="container footer__grid">
+        <div class="footer__col footer__col--brand">
+          <a href="#home" class="nav__logo" aria-label="TECH EMINANCE — Home">
+          <span class="nav__logo-icon" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <rect width="30" height="30" rx="7" fill="#E8520A"></rect>
+              <path d="M8 9H22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M15 9V22" stroke="white" stroke-width="2.5" stroke-linecap="round"></path>
+            </svg>
+          </span>
+          <span class="nav__logo-text">TECH EMINANCE</span>
+        </a>
+          <p class="footer__desc">We craft premium websites, ecommerce experiences, and growth-focused digital products that elevate modern brands worldwide.</p>
+          <div class="footer__social" aria-label="Social media links">
+            <a href="#" aria-label="LinkedIn" class="footer__social-link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .514.526 0 1.175 0h13.65C15.474 0 16 .514 16 1.146v13.708c0 .632-.526 1.146-1.175 1.146H1.175C.526 16 0 15.486 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="footer__social-link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="footer__social-link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0H8zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Quick Links</h3>
+          <ul class="footer__list" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services/web-design-development">Services</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/how-we-work">How We Work</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Services</h3>
+          <ul class="footer__list" role="list">
+            <li><a href="/services/web-design-development#what-we-build">Web Development</a></li>
+            <li><a href="/services/web-design-development#what-we-build">WordPress</a></li>
+            <li><a href="/#services">E-Commerce</a></li>
+            <li><a href="/#services">UI UX Design</a></li>
+            <li><a href="/#services">SEO</a></li>
+            <li><a href="/services/web-design-development#what-we-build">Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Contact</h3>
+          <ul class="footer__contact-list" role="list">
+            <li><span class="footer__icon" aria-hidden="true">☎</span><span>Phone: Available on request</span></li>
+            <li><span class="footer__icon" aria-hidden="true">✉</span><a href="mailto:hello@techeminance.com">hello@techeminance.com</a></li>
+            <li><span class="footer__icon" aria-hidden="true">⌖</span><span>India-based · Remote worldwide</span></li>
+            <li><span class="footer__icon" aria-hidden="true">⏰</span><span>Mon–Sat · 9AM–7PM IST</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2025 Tech Eminence. All rights reserved.</p>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
+          <a href="/">Back to top</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/preloader.js"></script>
+  <script src="/assets/js/vendor/swiper-bundle.min.js"></script>
+  <script src="/assets/js/slider.js"></script>
+  <script src="/assets/js/navigation.js"></script>
+  <script src="/assets/js/animations.js"></script>
+  <script src="/assets/js/script.js"></script>
+  <script>
+    (function () {
+      var filters = document.getElementById('blogFilters');
+      if (!filters) return;
+      var btns = filters.querySelectorAll('.blog-filter');
+      var cards = document.querySelectorAll('[data-category]');
+      var empty = document.getElementById('blogEmptyState');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          btns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          var filter = btn.getAttribute('data-filter');
+          var visibleCount = 0;
+          cards.forEach(function (card) {
+            var match = filter === 'all' || card.getAttribute('data-category') === filter;
+            card.style.display = match ? '' : 'none';
+            if (match) visibleCount++;
+          });
+          if (empty) empty.style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+      });
+    })();
+  </script>
+  <script src="/assets/js/whatsapp-widget.js"></script>
+</body>
+</html>

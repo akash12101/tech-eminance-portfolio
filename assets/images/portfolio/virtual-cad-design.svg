@@ -1,0 +1,30 @@
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Virtual CAD Design website preview illustration">
+  <defs>
+    <linearGradient id="bgCAD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#232323"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <radialGradient id="glowCAD" cx="0.5" cy="0.15" r="0.65">
+      <stop offset="0" stop-color="#e8520a" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#e8520a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bgCAD)"/>
+  <rect width="400" height="250" fill="url(#glowCAD)"/>
+
+  <rect x="70" y="42" width="260" height="168" rx="10" fill="#1f1f1f" stroke="#f4f1ec" stroke-opacity="0.18" stroke-width="1.5"/>
+  <rect x="70" y="42" width="260" height="24" rx="10" fill="#2c2c2c"/>
+  <circle cx="85" cy="54" r="3.5" fill="#e8520a"/>
+  <circle cx="97" cy="54" r="3.5" fill="#f4f1ec" opacity="0.35"/>
+  <circle cx="109" cy="54" r="3.5" fill="#f4f1ec" opacity="0.35"/>
+
+  <g stroke="#e8520a" stroke-width="1.6" fill="none" opacity="0.9">
+    <path d="M180 100L220 100L236 116L196 116Z"/>
+    <path d="M180 100L180 140L196 156L196 116Z"/>
+    <path d="M196 116L236 116L236 156L196 156Z"/>
+  </g>
+  <circle cx="147" cy="150" r="12" fill="none" stroke="#f4f1ec" stroke-width="1.5" opacity="0.4"/>
+  <path d="M147 142V158M139 150H155" stroke="#f4f1ec" stroke-width="1.5" opacity="0.4"/>
+  <rect x="100" y="178" width="90" height="8" rx="3" fill="#f4f1ec" opacity="0.22"/>
+  <rect x="100" y="192" width="140" height="8" rx="3" fill="#f4f1ec" opacity="0.16"/>
+</svg>

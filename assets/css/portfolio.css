@@ -1,0 +1,84 @@
+/* =============================================================
+   TECH EMINANCE — PORTFOLIO.CSS
+   Supplementary styles for portfolio.html only.
+   Reuses .portfolio-card / .portfolio-grid-section from
+   our-work.css; adds the page hero and the intro stat strip.
+============================================================= */
+
+.page-hero {
+  position: relative;
+  padding: 7.5rem 0 4rem;
+  background: var(--color-dark);
+  color: var(--color-white);
+  overflow: hidden;
+}
+.page-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(232,82,10,0.22), transparent 34%),
+    radial-gradient(circle at 85% 80%, rgba(232,82,10,0.12), transparent 30%);
+  pointer-events: none;
+}
+.page-hero__crumb {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; color: rgba(255,255,255,0.5);
+  margin-bottom: 1.5rem;
+}
+.page-hero__crumb a { color: rgba(255,255,255,0.7); }
+.page-hero__crumb a:hover { color: var(--color-accent); }
+.page-hero__inner { position: relative; z-index: 1; max-width: 760px; }
+.page-hero__art {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  width: clamp(220px, 24vw, 340px);
+  height: auto;
+  opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
+}
+@media (max-width: 1100px) {
+  .page-hero__art { display: none; }
+}
+.page-hero__title {
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1.25rem;
+}
+.page-hero__desc {
+  font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.72);
+  max-width: 640px; margin-bottom: 2rem;
+}
+.page-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* -------------------------------------------------------------
+   INTRO STAT STRIP (sits directly under the hero, above the grid)
+-------------------------------------------------------------- */
+.portfolio-stats {
+  padding: 2.5rem 0;
+  background: #0D0D0D;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.portfolio-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+.portfolio-stats__value {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 800;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+}
+.portfolio-stats__label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .portfolio-stats__grid { grid-template-columns: repeat(2, 1fr); }
+}

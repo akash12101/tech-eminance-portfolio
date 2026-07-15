@@ -1,0 +1,278 @@
+/* =============================================================
+   WHATSAPP CHAT WIDGET
+   Self-contained component. Uses the site's existing design
+   tokens (font, shadow, radius, transition) from style.css where
+   possible, with its own scoped variables for anything WhatsApp
+   brand-specific so this file can be dropped into any page
+   without touching style.css.
+============================================================= */
+
+:root {
+  --wa-brand: #25D366;
+  --wa-brand-dark: #1DA851;
+  --wa-offset-x: 20px;   /* min. distance from side edge, per spec   */
+  --wa-offset-y: 20px;   /* min. distance from bottom edge, per spec */
+  --wa-size: 60px;       /* button diameter on desktop/tablet        */
+  --wa-size-mobile: 54px;/* button diameter on small screens         */
+  --wa-z: 999990;        /* high z-index, stays under modals only    */
+}
+
+/* Fixed positioning wrapper — holds the button + the chat bubble.
+   Using a wrapper (not the button itself) means the bubble can be
+   anchored to it without affecting the button's own box model. */
+.whatsapp-widget {
+  position: fixed;
+  right: var(--wa-offset-x);
+  bottom: var(--wa-offset-y);
+  z-index: var(--wa-z);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  font-family: var(--font-base, 'Inter', sans-serif);
+
+  /* Fade-in on page load, no layout shift (position is fixed) */
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 400ms ease, transform 400ms ease;
+  pointer-events: none;
+}
+
+.whatsapp-widget.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  /* NOTE: intentionally no pointer-events here — the wrapper is a flex
+     column that reserves space for the chat bubble even while it's
+     closed (opacity:0), so making the *wrapper* clickable made that
+     empty reserved area swallow clicks meant for whatever page content
+     scrolls underneath it (e.g. slider arrows near the bottom-right
+     corner). Only the button and an open bubble opt back in below. */
+}
+
+/* If a cookie banner or other floating element is present, JS adds
+   this class to lift the widget clear of it. */
+.whatsapp-widget.is-lifted {
+  bottom: calc(var(--wa-offset-y) + var(--wa-lift, 72px));
+}
+
+/* -------------------------------------------------------------
+   Floating button
+------------------------------------------------------------- */
+.whatsapp-widget__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--wa-size);
+  height: var(--wa-size);
+  border-radius: var(--radius-full, 999px);
+  background: var(--wa-brand);
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.38), var(--shadow-md, 0 4px 16px rgba(0,0,0,0.08));
+  transition: transform 300ms ease, box-shadow 300ms ease, background-color 300ms ease;
+  flex-shrink: 0;
+}
+
+.whatsapp-widget__button:hover,
+.whatsapp-widget__button:focus-visible {
+  background: var(--wa-brand-dark);
+  transform: scale(1.08);
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.48), var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.12));
+}
+
+.whatsapp-widget__button:active {
+  transform: scale(0.98);
+}
+
+/* Strong, visible focus ring for keyboard users (WCAG 2.4.7) */
+.whatsapp-widget__button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.whatsapp-widget__icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  color: #ffffff;
+}
+
+/* Pulse ring — fires every 8s via a single keyframe timeline
+   (active for the first ~1.8s of every 8s cycle, idle the rest) */
+.whatsapp-widget__button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full, 999px);
+  background: var(--wa-brand);
+  animation: waPulse 8s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes waPulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  18%  { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+/* -------------------------------------------------------------
+   Expandable chat bubble
+------------------------------------------------------------- */
+.whatsapp-widget__bubble {
+  width: 268px;
+  max-width: calc(100vw - (var(--wa-offset-x) * 2));
+  background: var(--color-white, #ffffff);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.16));
+  border: 1px solid var(--color-border, #e3ded6);
+  padding: 16px 18px 18px;
+  cursor: pointer;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  pointer-events: none;
+  transition: opacity 300ms ease, transform 300ms ease;
+  transform-origin: bottom right;
+}
+
+.whatsapp-widget__bubble.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.whatsapp-widget__bubble:hover {
+  border-color: var(--wa-brand);
+}
+
+.whatsapp-widget__bubble-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-full, 999px);
+  color: var(--color-text-muted, #6b6b6b);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.whatsapp-widget__bubble-close:hover,
+.whatsapp-widget__bubble-close:focus-visible {
+  background: var(--color-cream-2, #ebe7e0);
+  color: var(--color-text, #181818);
+}
+
+.whatsapp-widget__bubble-close:focus-visible {
+  outline: 2px solid var(--wa-brand);
+  outline-offset: 1px;
+}
+
+.whatsapp-widget__bubble-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding-right: 20px;
+}
+
+.whatsapp-widget__bubble-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full, 999px);
+  background: var(--wa-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.whatsapp-widget__bubble-avatar svg {
+  width: 19px;
+  height: 19px;
+  color: #ffffff;
+}
+
+.whatsapp-widget__bubble-title {
+  font-size: var(--fs-sm, 0.875rem);
+  font-weight: 700;
+  color: var(--color-text, #181818);
+  margin: 0;
+}
+
+.whatsapp-widget__bubble-text {
+  font-size: var(--fs-sm, 0.875rem);
+  color: var(--color-text, #181818);
+  margin: 0 0 6px;
+  line-height: 1.45;
+}
+
+.whatsapp-widget__bubble-meta {
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--color-text-muted, #6b6b6b);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.whatsapp-widget__bubble-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--wa-brand);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------------------
+   Responsive
+------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .whatsapp-widget {
+    --wa-offset-x: 20px;
+    --wa-offset-y: 20px;
+  }
+  .whatsapp-widget__button {
+    width: var(--wa-size-mobile);
+    height: var(--wa-size-mobile);
+  }
+  .whatsapp-widget__icon {
+    width: 28px;
+    height: 28px;
+  }
+  .whatsapp-widget__bubble {
+    width: 240px;
+  }
+}
+
+@media (max-width: 380px) {
+  .whatsapp-widget__bubble {
+    width: calc(100vw - (var(--wa-offset-x) * 2));
+  }
+}
+
+/* Respect users who've asked for less motion, matching the rest
+   of the site's approach in animations.css */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-widget,
+  .whatsapp-widget__button,
+  .whatsapp-widget__bubble,
+  .whatsapp-widget__bubble-close {
+    transition: none !important;
+  }
+  .whatsapp-widget__button::before {
+    animation: none !important;
+    display: none;
+  }
+}

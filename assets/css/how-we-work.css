@@ -1,0 +1,161 @@
+/* =============================================================
+   Tech Eminence — HOW-WE-WORK.CSS
+   Supplementary styles for how-we-work.html only.
+   Reuses design tokens from style.css; adds the checklist,
+   communication, escalation and handover components.
+============================================================= */
+
+/* -------------------------------------------------------------
+   WHY WE DOCUMENT THIS (simple centered intro block)
+-------------------------------------------------------------- */
+.doc-intro { max-width: 760px; margin: 0 auto; text-align: left; }
+.doc-intro h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 700; margin-bottom: 1.5rem; }
+.doc-intro p { color: var(--color-text-muted); line-height: 1.85; margin-bottom: 1.25rem; }
+.doc-intro p:last-child { margin-bottom: 0; }
+
+/* -------------------------------------------------------------
+   DELIVERY STANDARDS — PHASE CHECKLIST CARDS
+-------------------------------------------------------------- */
+.phases { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
+
+.phase-card {
+  background: var(--color-white); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.phase-card__head {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-cream);
+}
+.phase-card__head-left { display: flex; align-items: center; gap: 1rem; }
+.phase-card__num {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  background: var(--color-accent); color: var(--color-white);
+  font-size: 0.9rem; font-weight: 800;
+}
+.phase-card__title { font-size: 1.05rem; font-weight: 700; }
+.phase-card__tag { font-size: 0.78rem; color: var(--color-text-muted); white-space: nowrap; }
+
+.phase-card__grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+  padding: 0.5rem 1.75rem 1.5rem;
+}
+.check-item { display: flex; gap: 0.75rem; padding: 0.9rem 0; }
+.check-item__mark {
+  flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(232,82,10,0.1); color: var(--color-accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; margin-top: 0.15rem;
+}
+.check-item__title { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.25rem; line-height: 1.4; }
+.check-item__desc { font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.6; }
+
+/* -------------------------------------------------------------
+   COMMUNICATION STANDARDS — DARK CARD GRID
+-------------------------------------------------------------- */
+.comm__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+.comm-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg); padding: 1.5rem;
+  transition: all var(--t-base);
+}
+.comm-card:hover { border-color: rgba(232,82,10,0.6); transform: translateY(-4px); }
+.comm-card__icon {
+  width: 40px; height: 40px; border-radius: var(--radius-md);
+  background: rgba(232,82,10,0.16); color: var(--color-accent);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem;
+}
+.comm-card__title { font-size: 0.95rem; font-weight: 700; color: var(--color-white); margin-bottom: 0.6rem; }
+.comm-card__desc { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+/* -------------------------------------------------------------
+   ESCALATION PROCESS — VERTICAL NUMBERED LIST
+-------------------------------------------------------------- */
+.escalation { max-width: 820px; margin: 2.5rem auto 0; display: flex; flex-direction: column; }
+.escalation-step {
+  display: grid; grid-template-columns: 44px 1fr; gap: 1.25rem;
+  padding: 1.5rem 0; border-bottom: 1px solid var(--color-border);
+}
+.escalation-step:last-child { border-bottom: none; }
+.escalation-step__num {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(232,82,10,0.1); color: var(--color-accent);
+  font-size: 0.95rem; font-weight: 800;
+}
+.escalation-step__title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.escalation-step__desc { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.75; }
+
+/* -------------------------------------------------------------
+   PROJECT HANDOVER — TWO CHECKLIST COLUMNS
+-------------------------------------------------------------- */
+.handover__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+.handover-col {
+  background: var(--color-white); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: 1.75rem;
+}
+.handover-col__title {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem;
+}
+.handover-col__title::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); flex-shrink: 0; }
+.handover-col ul { display: flex; flex-direction: column; gap: 0.85rem; }
+.handover-col li {
+  position: relative; padding-left: 1.4rem;
+  font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.65;
+}
+.handover-col li::before {
+  content: '✓'; position: absolute; left: 0; top: 0;
+  color: var(--color-accent); font-weight: 700; font-size: 0.8rem;
+}
+
+/* -------------------------------------------------------------
+   THE SAME PEOPLE — DARK NARRATIVE + STAT GRID
+-------------------------------------------------------------- */
+.consistency { position: relative; padding: var(--space-3xl) 0; background: var(--color-dark); overflow: hidden; }
+.consistency::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 10% 90%, rgba(232,82,10,0.16), transparent 34%);
+  pointer-events: none;
+}
+.consistency__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: center; }
+.consistency__title { font-size: clamp(1.6rem, 3vw, 2.25rem); color: var(--color-white); margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+.consistency__text p { color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 1rem; font-size: 0.92rem; }
+
+.consistency__stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.consistency-stat {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg); padding: 1.5rem;
+}
+.consistency-stat__value { font-size: 2.1rem; font-weight: 900; color: var(--color-accent); letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+.consistency-stat__label { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+/* -------------------------------------------------------------
+   STANDARD CTA (light, before the dark footer CTA)
+-------------------------------------------------------------- */
+.standard-cta { padding: var(--space-3xl) 0; text-align: center; }
+.standard-cta__inner { max-width: 680px; margin: 0 auto; }
+.standard-cta__title { font-size: clamp(1.6rem, 3vw, 2.25rem); margin-bottom: 1.1rem; letter-spacing: -0.02em; }
+.standard-cta__desc { color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.75rem; }
+.standard-cta__actions { display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
+.standard-cta__note { font-size: 0.8rem; color: var(--color-text-light); }
+
+/* -------------------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .comm__grid { grid-template-columns: repeat(2, 1fr); }
+  .consistency__grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 767px) {
+  .phase-card__grid { grid-template-columns: 1fr; padding: 0.5rem 1.25rem 1.25rem; }
+  .phase-card__head { padding: 1.25rem; }
+  .comm__grid { grid-template-columns: 1fr; }
+  .handover__grid { grid-template-columns: 1fr; }
+  .consistency__stats { grid-template-columns: 1fr 1fr; }
+  .escalation-step { grid-template-columns: 36px 1fr; }
+}

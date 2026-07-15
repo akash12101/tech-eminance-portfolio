@@ -1,0 +1,113 @@
+/* =============================================================
+   Tech Eminence — ANIMATIONS
+============================================================= */
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for grouped siblings */
+.services__grid .reveal-up:nth-child(1) { transition-delay: 0s; }
+.services__grid .reveal-up:nth-child(2) { transition-delay: 0.08s; }
+.services__grid .reveal-up:nth-child(3) { transition-delay: 0.16s; }
+.services__grid .reveal-up:nth-child(4) { transition-delay: 0.24s; }
+
+.why__grid .reveal-up:nth-child(1) { transition-delay: 0s; }
+.why__grid .reveal-up:nth-child(2) { transition-delay: 0.06s; }
+.why__grid .reveal-up:nth-child(3) { transition-delay: 0.12s; }
+.why__grid .reveal-up:nth-child(4) { transition-delay: 0.18s; }
+.why__grid .reveal-up:nth-child(5) { transition-delay: 0.24s; }
+.why__grid .reveal-up:nth-child(6) { transition-delay: 0.30s; }
+.why__grid .reveal-up:nth-child(7) { transition-delay: 0.36s; }
+.why__grid .reveal-up:nth-child(8) { transition-delay: 0.42s; }
+
+.process__steps .reveal-up:nth-child(1) { transition-delay: 0s; }
+.process__steps .reveal-up:nth-child(2) { transition-delay: 0.08s; }
+.process__steps .reveal-up:nth-child(3) { transition-delay: 0.16s; }
+.process__steps .reveal-up:nth-child(4) { transition-delay: 0.24s; }
+
+.depth__grid .reveal-up:nth-child(1) { transition-delay: 0s; }
+.depth__grid .reveal-up:nth-child(2) { transition-delay: 0.08s; }
+.depth__grid .reveal-up:nth-child(3) { transition-delay: 0.16s; }
+.depth__grid .reveal-up:nth-child(4) { transition-delay: 0.24s; }
+.depth__grid .reveal-up:nth-child(5) { transition-delay: 0.32s; }
+.depth__grid .reveal-up:nth-child(6) { transition-delay: 0.40s; }
+
+.testimonials__grid .reveal-up:nth-child(1) { transition-delay: 0s; }
+.testimonials__grid .reveal-up:nth-child(2) { transition-delay: 0.08s; }
+.testimonials__grid .reveal-up:nth-child(3) { transition-delay: 0.16s; }
+.testimonials__grid .reveal-up:nth-child(4) { transition-delay: 0.24s; }
+
+/* =============================================================
+   HERO ENTRANCE
+============================================================= */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__eyebrow { animation: fadeInUp 0.7s ease both; }
+.hero__title { animation: fadeInUp 0.7s ease 0.1s both; }
+.hero__desc { animation: fadeInUp 0.7s ease 0.2s both; }
+.hero__actions { animation: fadeInUp 0.7s ease 0.3s both; }
+.hero__note { animation: fadeInUp 0.7s ease 0.4s both; }
+
+/* =============================================================
+   BUTTON RIPPLE
+============================================================= */
+.btn { position: relative; overflow: hidden; }
+.btn .ripple {
+  position: absolute; border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transform: scale(0);
+  animation: rippleAnim 0.6s ease-out;
+  pointer-events: none;
+}
+@keyframes rippleAnim {
+  to { transform: scale(3); opacity: 0; }
+}
+
+/* =============================================================
+   FAQ ANSWER SLIDE
+============================================================= */
+.faq__answer { transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+
+/* =============================================================
+   MARQUEE PAUSE ON HOVER
+============================================================= */
+.platforms-bar:hover .platforms-bar__track { animation-play-state: paused; }
+
+/* =============================================================
+   SPINNER (for form submit states)
+============================================================= */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+  display: inline-block; width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff;
+  border-radius: 50%; animation: spin 0.6s linear infinite;
+}
+
+/* =============================================================
+   COUNTER PULSE ON COMPLETE
+============================================================= */
+@keyframes counterPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.counter.is-done { animation: counterPop 0.35s ease; }
+
+/* =============================================================
+   REDUCED MOTION
+============================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .platforms-bar__track { animation: none !important; }
+  .hero__eyebrow, .hero__title, .hero__desc, .hero__actions, .hero__note { animation: none !important; opacity: 1; }
+}

@@ -1,0 +1,106 @@
+/* =============================================================
+   Tech Eminence — PRELOADER.CSS
+   A full-screen, brand-matched loading screen shown briefly on
+   every page while assets settle. Purely additive — does not
+   touch any existing layout, spacing, or component styles.
+============================================================= */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--color-dark);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Prevents scroll/flash behind the overlay while it's up */
+html.preload-lock,
+html.preload-lock body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Logo mark + spinning ring */
+.preloader__markwrap {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preloader__mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(232, 82, 10, 0.35);
+  animation: preloader-pulse 1.7s ease-in-out infinite;
+}
+.preloader__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-top-color: var(--color-accent);
+  animation: preloader-spin 0.85s linear infinite;
+}
+
+/* Wordmark */
+.preloader__word {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 700;
+}
+
+/* Indeterminate progress bar */
+.preloader__bar {
+  width: 150px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.preloader__bar-fill {
+  display: block;
+  height: 100%;
+  width: 35%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-accent), #ff8d3f);
+  animation: preloader-loading 1.15s ease-in-out infinite;
+}
+
+@keyframes preloader-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes preloader-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@keyframes preloader-loading {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(340%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader__mark,
+  .preloader__ring,
+  .preloader__bar-fill {
+    animation: none;
+  }
+}

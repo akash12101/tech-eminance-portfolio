@@ -1,0 +1,54 @@
+<svg viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+  <defs>
+    <radialGradient id="heroGlow" cx="0.5" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#e8520a" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#e8520a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="heroBar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#c8430a"/>
+      <stop offset="1" stop-color="#ff9a3c"/>
+    </linearGradient>
+    <linearGradient id="heroRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9a3c"/>
+      <stop offset="1" stop-color="#e8520a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="560" height="460" fill="url(#heroGlow)"/>
+
+  <!-- orbit ring, echoes the brand mark -->
+  <circle cx="300" cy="220" r="170" fill="none" stroke="#f4f1ec" stroke-opacity="0.08" stroke-width="1.5"/>
+  <circle cx="300" cy="220" r="130" fill="none" stroke="#f4f1ec" stroke-opacity="0.06" stroke-width="1.5"/>
+  <circle cx="452" cy="128" r="9" fill="url(#heroRing)"/>
+
+  <!-- browser / dashboard card -->
+  <g>
+    <rect x="150" y="120" width="300" height="200" rx="14" fill="#1c1c1c" stroke="#f4f1ec" stroke-opacity="0.12" stroke-width="1.5"/>
+    <rect x="150" y="120" width="300" height="34" rx="14" fill="#262626"/>
+    <circle cx="172" cy="137" r="5" fill="#e8520a"/>
+    <circle cx="190" cy="137" r="5" fill="#f4f1ec" opacity="0.3"/>
+    <circle cx="208" cy="137" r="5" fill="#f4f1ec" opacity="0.3"/>
+
+    <rect x="172" y="172" width="256" height="30" rx="5" fill="#e8520a" opacity="0.85"/>
+    <rect x="172" y="214" width="120" height="76" rx="6" fill="#f4f1ec" opacity="0.10"/>
+    <rect x="304" y="214" width="124" height="34" rx="5" fill="#f4f1ec" opacity="0.22"/>
+    <rect x="304" y="256" width="90" height="10" rx="3" fill="#f4f1ec" opacity="0.18"/>
+    <rect x="304" y="274" width="124" height="10" rx="3" fill="#f4f1ec" opacity="0.18"/>
+
+    <!-- mini bar chart inside the left card -->
+    <rect x="188" y="256" width="14" height="26" rx="2" fill="url(#heroBar)" opacity="0.65"/>
+    <rect x="208" y="242" width="14" height="40" rx="2" fill="url(#heroBar)" opacity="0.8"/>
+    <rect x="228" y="228" width="14" height="54" rx="2" fill="url(#heroBar)"/>
+    <rect x="248" y="250" width="14" height="32" rx="2" fill="url(#heroBar)" opacity="0.5"/>
+  </g>
+
+  <!-- floating accent shapes -->
+  <rect x="90" y="300" width="64" height="64" rx="16" fill="#e8520a" opacity="0.85" transform="rotate(-8 122 332)"/>
+  <path d="M108 332 l10 10 l18 -22" stroke="#141414" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-8 122 332)"/>
+
+  <circle cx="452" cy="330" r="30" fill="#f4f1ec" opacity="0.9"/>
+  <path d="M440 330 h24 M452 318 v24" stroke="#141414" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="392" y="356" width="46" height="46" rx="12" fill="#232323" stroke="#f4f1ec" stroke-opacity="0.18" stroke-width="1.5"/>
+  <path d="M406 379 l8 8 l14 -16" stroke="#e8520a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

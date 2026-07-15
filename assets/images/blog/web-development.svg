@@ -1,0 +1,24 @@
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Web development illustration">
+  <defs>
+    <linearGradient id="bgDev" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#232323"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <radialGradient id="glowDev" cx="0.5" cy="0.15" r="0.65">
+      <stop offset="0" stop-color="#e8520a" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#e8520a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bgDev)"/>
+  <rect width="400" height="250" fill="url(#glowDev)"/>
+
+  <rect x="100" y="62" width="200" height="130" rx="10" fill="#1f1f1f" stroke="#f4f1ec" stroke-opacity="0.18" stroke-width="1.5"/>
+  <rect x="100" y="62" width="200" height="24" rx="10" fill="#2c2c2c"/>
+  <circle cx="115" cy="74" r="3.5" fill="#e8520a"/>
+  <circle cx="127" cy="74" r="3.5" fill="#f4f1ec" opacity="0.35"/>
+  <circle cx="139" cy="74" r="3.5" fill="#f4f1ec" opacity="0.35"/>
+
+  <text x="200" y="132" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="42" fill="#e8520a" opacity="0.9">&lt;/&gt;</text>
+  <rect x="128" y="150" width="90" height="8" rx="3" fill="#f4f1ec" opacity="0.22"/>
+  <rect x="128" y="164" width="140" height="8" rx="3" fill="#f4f1ec" opacity="0.16"/>
+</svg>
